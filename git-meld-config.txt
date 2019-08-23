@@ -1,0 +1,10 @@
+[diff]
+    external = git-meld
+[merge]
+    conflictstyle = diff3
+    tool = mymeld
+[mergetool "mymeld"]
+    prompt = false
+    keepBackup = false
+    keepTemporaries = false
+    cmd = /usr/bin/meld --auto-merge --output $MERGED $LOCAL $BASE $REMOTE --diff $BASE $LOCAL --diff $BASE $REMOTE
