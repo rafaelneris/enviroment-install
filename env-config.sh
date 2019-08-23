@@ -94,7 +94,7 @@ case "$option" in
         if !cmd_exists 'meld'; then
             sudo apt install meld -y
         fi
-        e_successo "Success"
+        e_success "Success"
 
         e_option_message "1.1.2) Configuring GIT"
 
@@ -116,7 +116,7 @@ case "$option" in
             cat git-meld-config.txt >> ~/.gitconfig
         fi
 
-        e_successo "Success"
+        e_success "Success"
 
         # Install PHP
         e_option_message "1.2) Add PHP Repository (ondrej/php):"
@@ -124,38 +124,38 @@ case "$option" in
             sudo add-apt-repository ppa:ondrej/php -y
             sudo apt-get update
         fi
-        e_successo "Success"
+        e_success "Success"
 
         e_option_message "1.3) Installing PHP 5.6:"
         if !cmd_exists 'php5.6'; then
             sudo apt install php5.6-cli php-common php5.6-common php5.6-json php5.6-opcache php5.6-readline php5.6-xml php5.6-intl php5.6-mcrypt php5.6-mbstring php5.6-soap php5.6-curl php5.6-zip -y
         fi
-        e_successo "Success"
+        e_success "Success"
 
         e_option_message "1.4) Installing PHP 7.1:"
         if !cmd_exists 'php7.1'; then
             sudo apt install php7.1-cli php-common php7.1-common php7.1-json php7.1-opcache php7.1-readline php7.1-xml php7.1-intl php7.1-mcrypt php7.1-mbstring php7.1-soap php7.1-curl php7.1-zip -y
         fi
-        e_successo "Success"
+        e_success "Success"
 
         e_option_message "1.5) Installing PHP 7.2:"
         if ! cmd_exists 'php7.2'; then
             sudo apt install php7.2-cli php-common php7.2-common php7.2-json php7.2-opcache php7.2-readline php7.2-xml php7.2-intl php7.2-mbstring php7.2-soap php7.2-curl php7.2-zip -y
         fi
-        e_successo "Success"
+        e_success "Success"
 
         e_option_message "1.6) Installing PHP 7.3:"
         if ! cmd_exists 'php7.3'; then
             sudo apt install php7.3-cli php-common php7.3-common php7.3-json php7.3-opcache php7.3-readline php7.3-xml php7.3-intl php7.3-mbstring php7.3-soap php7.3-curl php7.3-zip -y
         fi
-        e_successo "Success"
+        e_success "Success"
 
         # Composer Install
         e_option_message "1.7) Installing Composer:"
         if ! cmd_exists 'composer'; then
             sudo apt install composer -y
         fi
-        e_successo "Success"
+        e_success "Success"
 
         # Docker install
         e_option_message "1.8) Adding Docker Repository and Install Docker:"
@@ -187,11 +187,11 @@ case "$option" in
         if ! cmd_exists 'docker-compose'; then
             sudo apt install docker-compose -y
         fi
-        e_successo "Success"
+        e_success "Success"
 
         e_option_message "1.9) Add Docker to user:"
         sudo usermod -aG docker $(whoami)
-        e_successo "Success"
+        e_success "Success"
 
         # Read network name
         read -p "Enter your network name: " network
@@ -203,11 +203,11 @@ case "$option" in
 
         e_option_message "1.11) Enable docker service:"
         sudo systemctl enable docker
-        e_successo "Success"
+        e_success "Success"
 
         e_option_message "1.12) Starting Docker service:"
         sudo systemctl start docker
-        e_successo "Success"
+        e_success "Success"
     ;;
     [xX])
         echo "#################"
