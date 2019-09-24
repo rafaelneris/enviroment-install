@@ -2,5 +2,6 @@
 
 ## Usage:
 1) cd enviroment-install
-2) Run `sh env-config.sh`
-3) Be happy :)
+2) Run `chmod -R 777 ./`
+3) Run `sudo sh env-config.sh`
+4) Be happy :)
